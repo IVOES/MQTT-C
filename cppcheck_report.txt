@@ -1,0 +1,98 @@
+examples/bearssl_publisher.c:485:34: error: Common realloc mistake: 'tas' nulled but not freed upon failure [memleakOnRealloc]
+                    if (NULL == (tas = (br_x509_trust_anchor *)realloc(tas, (cert_count + 1) * sizeof(br_x509_trust_anchor)))) {
+                                 ^
+examples/bearssl_publisher.c:392:21: warning: Either the condition 'ca_file!=NULL' is redundant or there is possible null pointer dereference: ca_file. [nullPointerRedundantCheck]
+    FILE *f = fopen(ca_file, "rb");
+                    ^
+examples/bearssl_publisher.c:396:17: note: Assuming that condition 'ca_file!=NULL' is not redundant
+    if (ca_file != NULL) {
+                ^
+examples/bearssl_publisher.c:392:21: note: Null pointer dereference
+    FILE *f = fopen(ca_file, "rb");
+                    ^
+examples/templates/bearssl_sockets.h:46:13: style: The scope of the variable 'wlen' can be reduced. [variableScope]
+    ssize_t wlen;
+            ^
+examples/templates/bearssl_sockets.h:71:9: style: The scope of the variable 'rv' can be reduced. [variableScope]
+    int rv;
+        ^
+examples/bearssl_publisher.c:443:2: warning: Unused variable value 'po_name' [constStatement]
+ po_name;
+ ^
+examples/templates/bearssl_sockets.h:136:12: error: Uninitialized variable: rc [uninitvar]
+    return rc;
+           ^
+examples/templates/bearssl_sockets.h:136:12: error: Uninitialized variable: rc [uninitvar]
+    return rc;
+           ^
+examples/templates/bearssl_sockets.h:130:17: note: Assuming condition is false
+    if (ctx->fd != 0) {
+                ^
+examples/templates/bearssl_sockets.h:136:12: note: Uninitialized variable: rc
+    return rc;
+           ^
+examples/bearssl_publisher.c:365:20: style: Variable 'result' is assigned a value that is never used. [unreadVariable]
+            result = 0;
+                   ^
+examples/bearssl_publisher.c:379:20: style: Variable 'result' is assigned a value that is never used. [unreadVariable]
+            result = 0;
+                   ^
+examples/templates/mbedtls_sockets.h:129:0: information: Skipping configuration 'MBEDTLS_NET_POLL_READ' since the value of 'MBEDTLS_NET_POLL_READ' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+            want |= MBEDTLS_NET_POLL_READ;
+^
+src/mqtt.c:1619:34: error: Pointer addition with NULL pointer. [nullPointerArithmetic]
+    mq->mem_end = (uint8_t *)buf + bufsz;
+                                 ^
+src/mqtt.c:162:31: note: Calling function 'mqtt_mq_init', 2nd argument 'NULL' value is 0
+    mqtt_mq_init(&client->mq, NULL, 0uL);
+                              ^
+src/mqtt.c:1619:34: note: Null pointer addition
+    mq->mem_end = (uint8_t *)buf + bufsz;
+                                 ^
+src/mqtt_pal.c:59:0: information: Skipping configuration 'MBEDTLS_ERR_SSL_ASYNC_IN_PROGRESS;MQTT_USE_MBEDTLS' since the value of 'MBEDTLS_ERR_SSL_ASYNC_IN_PROGRESS' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+                || rv == MBEDTLS_ERR_SSL_ASYNC_IN_PROGRESS
+^
+src/mqtt_pal.c:105:0: information: Skipping configuration 'MBEDTLS_ERR_SSL_ASYNC_IN_PROGRESS;MQTT_USE_MBEDTLS' since the value of 'MBEDTLS_ERR_SSL_ASYNC_IN_PROGRESS' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+                || rv == MBEDTLS_ERR_SSL_ASYNC_IN_PROGRESS
+^
+src/mqtt_pal.c:62:0: information: Skipping configuration 'MBEDTLS_ERR_SSL_CRYPTO_IN_PROGRESS;MQTT_USE_MBEDTLS' since the value of 'MBEDTLS_ERR_SSL_CRYPTO_IN_PROGRESS' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+                || rv == MBEDTLS_ERR_SSL_CRYPTO_IN_PROGRESS
+^
+src/mqtt_pal.c:108:0: information: Skipping configuration 'MBEDTLS_ERR_SSL_CRYPTO_IN_PROGRESS;MQTT_USE_MBEDTLS' since the value of 'MBEDTLS_ERR_SSL_CRYPTO_IN_PROGRESS' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+                || rv == MBEDTLS_ERR_SSL_CRYPTO_IN_PROGRESS
+^
+src/mqtt_pal.c:216:18: style: The scope of the variable 'status' can be reduced. [variableScope]
+    unsigned int status;
+                 ^
+src/mqtt_pal.c:258:14: style: The scope of the variable 'buffer' can be reduced. [variableScope]
+    uint8_t *buffer;
+             ^
+src/mqtt_pal.c:305:24: style: Condition 'tmp<=0' is always true [knownConditionTrueFalse]
+        } else if (tmp <= 0 && !BIO_should_retry(fd)) {
+                       ^
+src/mqtt_pal.c:303:17: note: Assuming that condition 'tmp>0' is not redundant
+        if (tmp > 0) {
+                ^
+src/mqtt_pal.c:305:24: note: Condition 'tmp<=0' is always true
+        } else if (tmp <= 0 && !BIO_should_retry(fd)) {
+                       ^
+src/mqtt_pal.c:316:9: style: The scope of the variable 'rv' can be reduced. [variableScope]
+    int rv;
+        ^
+src/mqtt_pal.c:133:41: portability: 'buf' is of type 'const void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+        int tmp = wolfSSL_write(fd, buf + sent, (int)(len - sent));
+                                        ^
+src/mqtt_pal.c:365:13: style: The scope of the variable 'rv' can be reduced. [variableScope]
+    ssize_t rv;
+            ^
+tests.c:630:13: style: The scope of the variable 'rv' can be reduced. [variableScope]
+    ssize_t rv;
+            ^
+tests.c:262:8: style: Variable 'rv' is assigned a value that is never used. [unreadVariable]
+    rv = mqtt_unpack_publish_response(&mqtt_response, buf + 2);
+       ^
+src/mqtt.c:474:0: style: The function 'mqtt_reconnect' is never used. [unusedFunction]
+
+^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingIncludeSystem]
+
